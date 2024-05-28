@@ -1,26 +1,17 @@
-import { sql } from "@vercel/postgres";
-import { getMessage } from "../lib/message-lib";
-
-interface Message {
-    id: number;
-    message: string;
-    senttime: Date;
-}
-export default async function Cart({
-    params
-}: {
-    params: { user: string }
-}): Promise<JSX.Element> {
-    const messages = await getMessage();
+// pages/page.tsx
+import React from 'react';
+import { getUserMessage } from '../lib/message-lib';
+export default async function ChatRoom() {
+    const messages: any[] = await getUserMessage(); // Fetch data inside the component
     console.log(messages);
 
     return (
         <div>
-            {messages.map((message) => (
-                <div key={message.id}>
-                    {message.id} - {message.message}
-                </div>
-            ))}
+            {
+                messages && messages.map((message) => (
+                    <div key={message.id}>{message.text}</div>
+                ))
+            }
         </div>
     );
 }
