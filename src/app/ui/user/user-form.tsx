@@ -1,18 +1,24 @@
+'use client';
+
 import { UserCircleIcon } from '@heroicons/react/24/solid';
 import { useForm, FormProvider } from 'react-hook-form';
-import { lusitana } from '../fonts';
 import { CommonButton } from '@/app/ui/common/button';
 import { FormInput } from '@/app/ui/common/input';
-import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { IUserModel } from '@/app/model/user.model';
+import { useFormState } from 'react-dom';
+import { actionUserFormSubmit } from './user-action';
 
-export default function UserForm() {
+interface IFormInputs {
+    userName: string;
+}
+
+export default function UserForm({ actionLogin }: { actionLogin: any }) {
 
     const name_validation = {
-        name: 'username',
+        name: 'userName',
         label: 'Please give your name',
         type: 'text',
-        id: 'username',
+        id: 'userName',
         placeholder: 'Enter your name',
         validation: {
             required: {
@@ -26,23 +32,14 @@ export default function UserForm() {
         },
     };
 
-    const navigation = useRouter();
-    const formProps = useForm();
+    // const navigation = useRouter();
+    const formProps = useForm<IFormInputs>();
     const onSubmit = formProps.handleSubmit(data => {
         if (formProps.formState.isValid) {
-            navigation.push('/chat-box');
+            actionLogin(formProps.getValues() as IUserModel);
         }
     });
-    const [state, setState] = useState({
-        username: ''
-    });
-    // const handleInputChange = (event: any) => {
-    //     const { name, value } = event.target;
-    //     setState((prevProps) => ({
-    //         ...prevProps,
-    //         [name]: value
-    //     }));
-    // };
+    formProps.setFocus('userName', { shouldSelect: true });
 
     return (
         <>

@@ -6,7 +6,9 @@ async function seedUsers(client) {
     const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS users (
         id SERIAL PRIMARY KEY,
-        username VARCHAR(255) NOT NULL
+        userName VARCHAR(255) NOT NULL,
+        nickName VARCHAR(255) NOT NULL,
+        createdTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       );
     `;
 
