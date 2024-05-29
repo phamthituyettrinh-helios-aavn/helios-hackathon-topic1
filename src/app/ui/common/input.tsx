@@ -1,6 +1,7 @@
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 import { lusitana } from '../fonts';
+import LogInFormStyle from '@/app/ui/login.module.scss';
 
 interface RequiredInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     children: React.ReactNode;
@@ -15,7 +16,7 @@ export function FormInput({ children, id, label, type, placeholder, validation, 
     const errorMessage = errors[id]?.message?.toString();
 
     return (
-        <div className="flex flex-col w-full gap-2">
+        <div className={`${LogInFormStyle.form_container} flex flex-col w-full gap-2`}>
             <div className="flex justify-between">
                 <label htmlFor={id} className={`${lusitana.className} mb-3 text-2xl`}>
                     {label}

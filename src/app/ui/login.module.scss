@@ -1,33 +1,48 @@
+// .container {
+//     display: flex;
+//     flex-direction: column;
+//     // height: 100vh;
+//     justify-content: center;
+// }
+
+// .logInBoxName {
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+
+//     span {
+//         width: 25%;
+//     }
+
+//     input {
+//         height: 32px;
+//         width: 75%;
+//         padding-left: 8px;
+//         margin-left: 8px;
+//         border-radius: 8px;
+//     }
+// }
+
+// .logInButton {
+//     padding: 8px 16px;
+//     background: blue;
+//     color: white;
+//     margin-top: 16px;
+//     border-radius: 8px;
+//     margin: 16px 112px;
+// }
 .container {
-    display: flex;
-    flex-direction: column;
-    // height: 100vh;
-    justify-content: center;
-}
+    height: 100vh;
 
-.logInBoxName {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    span {
-        width: 25%;
-    }
-
-    input {
-        height: 32px;
-        width: 75%;
-        padding-left: 8px;
-        margin-left: 8px;
-        border-radius: 8px;
+    form {
+        margin-top: 60%;
+        margin-right: 16px;
+        margin-left: 16px;
     }
 }
 
-.logInButton {
-    padding: 8px 16px;
-    background: blue;
-    color: white;
-    margin-top: 16px;
-    border-radius: 8px;
-    margin: 16px 112px;
+.form_container {
+    label {
+        color: brown;
+    }
 }

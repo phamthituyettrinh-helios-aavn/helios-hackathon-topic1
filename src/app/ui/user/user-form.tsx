@@ -5,6 +5,7 @@ import { useForm, FormProvider } from 'react-hook-form';
 import { CommonButton } from '@/app/ui/common/button';
 import { FormInput } from '@/app/ui/common/input';
 import { IUserModel } from '@/app/model/user.model';
+import LogInFormStyle from '@/app/ui/login.module.scss';
 import { useFormState } from 'react-dom';
 import { actionUserFormSubmit } from './user-action';
 
@@ -42,7 +43,7 @@ export default function UserForm({ actionLogin }: { actionLogin: any }) {
     formProps.setFocus('userName', { shouldSelect: true });
 
     return (
-        <>
+        <div className={LogInFormStyle.container}>
             <FormProvider {...formProps}>
                 <form onSubmit={e => e.preventDefault()}
                     noValidate className="space-y-3" >
@@ -67,6 +68,6 @@ export default function UserForm({ actionLogin }: { actionLogin: any }) {
                 </form >
 
             </FormProvider>
-        </>
+        </div>
     );
 }
