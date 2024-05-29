@@ -1,10 +1,10 @@
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-    const currentUser = request.cookies.get('currentUser')?.value
+    const currentUser = request.cookies.get('currentUser')?.value;
 
-    if (currentUser && !request.nextUrl.pathname.startsWith('/chat-box')) {
-        return Response.redirect(new URL('/chat-box', request.url))
+    if (currentUser && !request.nextUrl.pathname.startsWith('/chat-room')) {
+        return Response.redirect(new URL('/chat-room', request.url))
     }
 
     if (!currentUser && !request.nextUrl.pathname.startsWith('/login')) {

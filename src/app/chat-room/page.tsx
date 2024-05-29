@@ -2,13 +2,13 @@
 import React from 'react';
 import { getUserMessage } from '../lib/message-lib';
 import ChatRoomStyle from '@/app/ui/chat-room.module.scss';
+
 export default async function ChatRoom() {
     const messages: any[] = await getUserMessage(); // Fetch data inside the component
     console.log(messages);
 
     return (
         <div>
-
             <div className="bg-gray-100">
                 <div className="flex flex-col h-screen">
                     <div className="bg-blue-500 text-white p-4">

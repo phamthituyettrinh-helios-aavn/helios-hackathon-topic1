@@ -3,24 +3,24 @@
 import React, { useState } from 'react';
 import UserForm from '../ui/user/user-form';
 import { IUserModel } from '../model/user.model';
-import { actionUserFormSubmit } from '../ui/user/user-action';
+import { actionUserLogin } from '@/app/lib/user-action';
 import { LoadingPinner } from '../ui/common/loading-spinner';
 import { useRouter } from 'next/navigation';
 
 export default function Page() {
     const router = useRouter();
     const [isLoading, setLoading] = useState(false);
-    const handleLogin = (user: IUserModel) => {
-        console.log(user);
-        setLoading(true);
-        actionUserFormSubmit(user).then((newUser: IUserModel) => {
-            console.log(newUser);
+    const handleLogin = async (user: IUserModel) => {
+        try {
+            setLoading(true);
+            await actionUserLogin(user);
+            console.log('Hieu khung');
             router.push(`/chat-room`);
-        }).catch(error => {
-            alert(error.message);
-        }).finally(() => {
+        } catch (error) {
+            alert(error);
+        } finally {
             setLoading(false);
-        });
+        }
     }
 
     return (

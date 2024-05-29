@@ -2,7 +2,6 @@
 
 import { sql } from '@vercel/postgres';
 import { IUserModel } from '../model/user.model';
-import { NextResponse } from 'next/server';
 
 export async function userLibCreateUser(user: IUserModel): Promise<IUserModel> {
     try {
