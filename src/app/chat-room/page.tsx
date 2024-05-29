@@ -53,7 +53,7 @@ export default async function ChatRoom() {
 
 
                     <div className="bg-white p-4 flex">
-                        <input type="text" className="border p-2 rounded flex-1" placeholder="Type a message..." />
+                        <input type="text" className={`${ChatRoomStyle.privateMessageInput} border p-2 rounded flex-1`} placeholder="Type a message..." />
                         <button className="bg-blue-500 text-white rounded p-2 ml-2">Send</button>
                     </div>
                 </div>
