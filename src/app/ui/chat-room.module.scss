@@ -1,0 +1,57 @@
+.privateMessageContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 16px;
+
+    .privateMessageName {
+        color: #800000;
+        margin-top: 8px;
+    }
+
+    .privateMessageArray {
+        display: flex;
+        flex-direction: column;
+
+        span {
+            background-color: #E0E0E0;
+            padding: 8px;
+            margin-top: 8px;
+            margin-left: 8px;
+            color: black;
+            border-radius: 8px;
+        }
+
+        span:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+.privateMessageContainerOfMe {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 16px;
+
+    .privateMessageName {
+        color: #800000;
+        margin-top: 8px;
+    }
+
+    .privateMessageArray {
+        display: flex;
+        flex-direction: column;
+
+        span {
+            background-color: #66FFFF;
+            padding: 8px;
+            margin-top: 8px;
+            margin-right: 8px;
+            color: black;
+            border-radius: 8px;
+        }
+
+        span:first-child {
+            margin-top: 0;
+        }
+    }
+}
