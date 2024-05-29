@@ -56,7 +56,7 @@ export default function UserForm({ actionLogin }: { actionLogin: any }) {
                                     </FormInput>
                                 </div>
                             </div>
-                            <div className="pt-8 justify-center">
+                            <div className=" flex pt-8 justify-center">
                                 <CommonButton onClick={onSubmit} aria-disabled={!formProps.formState.isValid}>
                                     <span>Go Chat Room</span>
                                 </CommonButton>

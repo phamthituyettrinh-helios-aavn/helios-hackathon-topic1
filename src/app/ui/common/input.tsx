@@ -17,12 +17,12 @@ export function FormInput({ children, id, label, type, placeholder, validation, 
 
     return (
         <div className={`${LogInFormStyle.form_container} flex flex-col w-full gap-2`}>
-            <div className="flex justify-between">
+            <div className={`${LogInFormStyle.form_label} flex justify-between`}>
                 <label htmlFor={id} className={`${lusitana.className} mb-3 text-2xl`}>
                     {label}
                 </label>
             </div>
-            <div>
+            <div className={`${LogInFormStyle.form_input}`}>
                 <input
                     className="w-full p-5 font-medium border rounded-md border-slate-300 placeholder:opacity-60"
                     id={id}

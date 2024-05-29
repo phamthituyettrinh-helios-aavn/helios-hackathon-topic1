@@ -42,7 +42,21 @@
 }
 
 .form_container {
-    label {
-        color: brown;
+    .form_label {
+        align-self: center;
+
+        label {
+            color: brown;
+        }
+    }
+
+    .form_input {
+        position: relative;
+
+        input {
+            padding: 8px;
+            padding-left: 32px;
+            color: black;
+        }
     }
 }
